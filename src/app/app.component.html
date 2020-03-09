@@ -1,0 +1,40 @@
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-light bg-dark" >
+      <a class="navbar-brand" style="color:antiquewhite" href="/">
+        <i class="fab fa-github"></i> Github Users
+      </a>
+      <form (submit)="submitData(dataName)">
+        <input id="textSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" autofocus #dataName>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+          <!-- PROFILE  -->
+        <div id="indexhtml" class="col-md-4"></div>
+        <div class="col-md-6">
+          <div *ngIf="user" class="card card-body text-center">
+            <h1 class="h4">User Information</h1>
+            <div class="card mt-2 animated bounceInLeft">
+            <img src="{{user.avatar_url}}" class="card-img-top"/>   
+            <div class="card-body">
+              <h3 class="card-title">{{user.name}} / {{user.login}}</h3>
+              <a href="{{user.html_url}}" class="btn btn-primary btn-block">
+                View Profile
+              </a>
+              <h5 class="badge badge-success">
+                followers: {{user.followers}}
+              </h5>
+              <h5 class="badge badge-primary">
+                following: {{user.following}}
+              </h5>
+             
+            </div>
+          </div> 
+  
+          </div>
+        </div>
+      </div>
+    </div>
+
